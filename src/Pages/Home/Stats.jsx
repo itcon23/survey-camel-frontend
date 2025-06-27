@@ -2,9 +2,6 @@ import { FaBoxOpen } from "react-icons/fa6";
 import { IoGiftSharp } from "react-icons/io5";
 import { MdOutlineQueryStats } from "react-icons/md";
 
-
-
-
 import Stats1 from "../../assets/img/home/stats-2.avif";
 import Stats2 from "../../assets/img/home/stats-3.avif";
 import Stats3 from "../../assets/img/home/stats-1.avif";
