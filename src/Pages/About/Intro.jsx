@@ -9,9 +9,9 @@ export default function Intro() {
           <div className="hero-content flex-col lg:flex-row-reverse justify-between gap-5">
             <img
               src="https://webassets.ssisurveys.com/opinionoutpost/banner3/images/img_10.png"
-              className="6/12"
+              className="md:w-6/12"
             />
-            <div className="w-6/12">
+            <div className="md:w-6/12">
               <h1 className="text-2xl font-bold leading-14">
                 what is opinion outpost?
               </h1>
@@ -35,7 +35,7 @@ export default function Intro() {
         {/* Item Two */}
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row-reverse justify-between gap-5">
-            <div className="w-6/12">
+            <div className="md:w-6/12">
               <h1 className="text-2xl font-bold leading-14">
                 what is opinion outpost?
               </h1>
@@ -56,7 +56,7 @@ export default function Intro() {
             </div>
             <img
               src="https://webassets.ssisurveys.com/opinionoutpost/banners4/images/img_0.png"
-              className="6/12"
+              className="md:w-6/12"
             />
           </div>
         </div>

@@ -20,30 +20,30 @@ export default function AvgEarning() {
           </p>
         </div>
 
-        <div className="max-w-[900px] mx-auto">
-            <div className="hero">
-          <div className="hero-content flex-col md:flex-row items-start gap-20">
-
-            <div>
-              <p className="py-6">So, how much could you earn?</p>
-              <h1 className="text-5xl font-bold mb-20">Just ask Alex</h1>
-              <p>
-                Alex joined us and after just 2 weeks, he'd completed 10 surveys
-                and earned him 100 points. Alex then redeemed for an Amazon Gift
-                Card worth $10.*
-              </p>
+        <div className="md:max-w-[900px] mx-auto">
+          <div className="hero">
+            <div className="hero-content flex-col md:flex-row items-start gap-20">
+              <div>
+                <p className="py-6">So, how much could you earn?</p>
+                <h1 className="text-5xl font-bold mb-20">Just ask Alex</h1>
+                <p>
+                  Alex joined us and after just 2 weeks, he'd completed 10
+                  surveys and earned him 100 points. Alex then redeemed for an
+                  Amazon Gift Card worth $10.*
+                </p>
+              </div>
+              <img
+                src="https://darwin-assets.dynata.com/OO/alex@2x.png"
+                className="max-w-sm rounded-lg"
+              />
             </div>
-                        <img
-              src="https://darwin-assets.dynata.com/OO/alex@2x.png"
-              className="max-w-sm rounded-lg"
-            />
           </div>
-        </div>
-        <div className="bg-blue-950 -mt-4 p-4 rounded-md">
-<p className="text-white text-sm">Understandably, Alex is delighted. Just one of the thousands of happy members getting rewarded with Opinion Outpost.
-
-</p>
-        </div>
+          <div className="bg-blue-950 -mt-4 p-4 rounded-md">
+            <p className="text-white text-sm">
+              Understandably, Alex is delighted. Just one of the thousands of
+              happy members getting rewarded with Opinion Outpost.
+            </p>
+          </div>
         </div>
       </div>
     </section>

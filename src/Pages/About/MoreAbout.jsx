@@ -11,7 +11,7 @@ export default function MoreAbout() {
 
 </h2>
 
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {/* Item 1 */}
           <div className="rounded-md border border-gray-200 p-8 text-center w-80">
             <img
