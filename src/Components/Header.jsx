@@ -21,8 +21,8 @@ export default function Header() {
       }`}
     >
       <div className="container">
-        <div className="flex justify-between items-center">
-          <h2 className="text-xl font-bold">Camel Survey</h2>
+        <div className="flex justify-center md:justify-between items-center">
+          <h2 className="text-xl font-bold hidden md:block">Camel Survey</h2>
 
           <div className="flex gap-20 items-center">
             <ul className="flex gap-5 font-medium">
