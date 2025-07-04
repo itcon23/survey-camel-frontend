@@ -4,7 +4,7 @@ export default function MostQuestion() {
       <div className="container">
         <div className="max-w-xxl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-10 opacity-90">
-            Opinion Outpost most commonly asked questions
+            Survey Camel most commonly asked questions
           </h2>
         </div>
 
@@ -12,8 +12,8 @@ export default function MostQuestion() {
         <div className="space-y-4">
           {[
             {
-              question: "How do Opinion Outpost paid surveys work?",
-              answer: `Once you've set up your account, you’ll receive an email welcoming you to Opinion Outpost. From then on, we'll send you regular emails inviting you to take surveys. (These emails will contain all the information you need to take part.)
+              question: "How do Survey Camel paid surveys work?",
+              answer: `Once you've set up your account, you’ll receive an email welcoming you to Survey Camel. From then on, we'll send you regular emails inviting you to take surveys. (These emails will contain all the information you need to take part.)
 
 Earn points every time you complete a survey, and after you have enough points in your balance, you can redeem them for the rewards of your choice.`,
             },
@@ -42,8 +42,8 @@ Your reward will be automatically credited to your account when you finish the s
 After you have enough points in your balance, you can redeem them for the rewards of your choice. Visit the Rewards section to check out the rewards we have available!`,
             },
             {
-              question: "Is Opinion Outpost free to join?",
-              answer: `Yes, joining Opinion Outpost is completely free. You’ll never be asked to pay to participate in surveys or to claim your rewards.`,
+              question: "Is Survey Camel free to join?",
+              answer: `Yes, joining Survey Camel is completely free. You’ll never be asked to pay to participate in surveys or to claim your rewards.`,
             },
             {
               question: "How often will I receive surveys?",
@@ -58,19 +58,19 @@ After you have enough points in your balance, you can redeem them for the reward
               answer: `You can redeem points for a wide range of rewards including PayPal cash, Amazon gift cards, Visa prepaid cards, and other popular vouchers.`,
             },
             {
-              question: "Can I access Opinion Outpost on mobile?",
-              answer: `Yes! Opinion Outpost is mobile-friendly. You can take surveys on your phone, tablet, or computer at your convenience.`,
+              question: "Can I access Survey Camel on mobile?",
+              answer: `Yes! Survey Camel is mobile-friendly. You can take surveys on your phone, tablet, or computer at your convenience.`,
             },
             {
               question: "How do I know if a survey is legitimate?",
-              answer: `Every survey sent through Opinion Outpost is verified and from trusted research partners. Always access surveys directly through your Opinion Outpost account or verified emails.`,
+              answer: `Every survey sent through Survey Camel is verified and from trusted research partners. Always access surveys directly through your Survey Camel account or verified emails.`,
             },
             {
               question: "What happens if I get disqualified from a survey?",
               answer: `Sometimes, after a few initial questions, you may be disqualified from a survey if your profile doesn’t match the target audience. You’ll still often receive an entry into a prize draw or other small reward for your time.`,
             },
             {
-              question: "Can I refer friends to Opinion Outpost?",
+              question: "Can I refer friends to Survey Camel?",
               answer: `Yes! You can refer friends and earn bonus rewards when they sign up and complete their first surveys. Check your account for your unique referral link.`,
             },
             {

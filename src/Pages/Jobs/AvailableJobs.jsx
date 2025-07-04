@@ -36,8 +36,11 @@ export default function AvailableJobs() {
         <div className="mt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {
-              jobList.map(job => <div className="bg-white rounded-xl border border-gray-200 overflow-hidden" key={job._id}>
-              <div className="p-8">
+              jobList.map(job => <div className="bg-white rounded-xl border border-gray-200 overflow-hidden relative" key={job._id}>
+              <div className="absolute top-5 right-5 bg-cyan-500 text-white py-2 px-5 rounded-md font-medium">
+                Experience - {job.experience}
+              </div>
+              <div className="p-8 pt-16">
 
                 <div className="mt-4">
                   <h3 className="text-2xl font-bold text-gray-700">{job.title}</h3>
@@ -45,6 +48,7 @@ export default function AvailableJobs() {
                     <p className="text-lg font-medium text-gray-400 flex items-center gap-1 capitalize"><FaMapMarkerAlt/>{job.location}</p>
                     <p className="text-lg font-medium text-gray-400 flex items-center gap-1 capitalize"><FaBriefcase/>{job.jobType}</p>
                   </div>
+                  <p className="text-2xl font-bold">{job.salary}</p>
                   <p className="mt-2 text-gray-500 w-full truncate-3-lines">
                     {job.description}
                   </p>

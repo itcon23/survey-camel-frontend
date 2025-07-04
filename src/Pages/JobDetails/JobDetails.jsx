@@ -39,7 +39,6 @@ export default function JobDetails() {
         {/* Top Area */}
         <div className="bg-[#04343a] py-12">
           <div className="container mx-auto">
-            <div className="md:w-6/12">
               <div className="pt-[10vh] Pb-20">
                 <div className="inline-block p-1 px-2 rounded-full bg-white mb-2">
                   <p className="text-xs font-bold text-[#04343a]">
@@ -91,7 +90,6 @@ export default function JobDetails() {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 

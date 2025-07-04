@@ -41,7 +41,7 @@ export default function AvgEarning() {
           <div className="bg-blue-950 -mt-4 p-4 rounded-md">
             <p className="text-white text-sm">
               Understandably, Alex is delighted. Just one of the thousands of
-              happy members getting rewarded with Opinion Outpost.
+              happy members getting rewarded with Survey Camel.
             </p>
           </div>
         </div>

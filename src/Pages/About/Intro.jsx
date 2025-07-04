@@ -13,7 +13,7 @@ export default function Intro() {
             />
             <div className="md:w-6/12">
               <h1 className="text-2xl font-bold leading-14">
-                what is opinion outpost?
+                what is Survey Camel?
               </h1>
               <p className="py-2">Tell us what you think - get paid. Simple.</p>
               <p className="py-2">
@@ -37,7 +37,7 @@ export default function Intro() {
           <div className="hero-content flex-col lg:flex-row-reverse justify-between gap-5">
             <div className="md:w-6/12">
               <h1 className="text-2xl font-bold leading-14">
-                what is opinion outpost?
+                what is Survey Camel?
               </h1>
               <p className="py-2">Tell us what you think - get paid. Simple.</p>
               <p className="py-2">
