@@ -9,7 +9,7 @@ export default function AvailableJobs() {
 
   useEffect(() => {
     const fetchJobList = async () => {
-      const response = await fetch('public/jobs.json');
+      const response = await fetch('jobs.json');
       const data = await response.json();
       setJobList(data)
     }
