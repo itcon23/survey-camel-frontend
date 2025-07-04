@@ -9,9 +9,9 @@ export default function AvailableJobs() {
 
   useEffect(() => {
     const fetchJobList = async () => {
-      const response = await fetch('http://localhost:3000/survey-camel/jobs');
+      const response = await fetch('public/jobs.json');
       const data = await response.json();
-      setJobList(data?.data)
+      setJobList(data)
     }
 
     fetchJobList();

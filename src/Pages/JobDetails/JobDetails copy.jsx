@@ -14,24 +14,23 @@ import {
 
 export default function JobDetails() {
   const { jobId } = useParams();
-  const [loading,setLoading] = useState(true)
   const [job, setJob] = useState(null);
-
+  
+ 
+  const [jobList, setJobList] = useState([]);
 
   useEffect(() => {
     const fetchJobList = async () => {
-      const response = await fetch('/jobs.json');
+      const response = await fetch('public/jobs.json');
       const data = await response.json();
-      setJob(data.find(dt => dt._id == jobId))
-      setLoading(false)
+      setJobList(data)
     }
+
     fetchJobList();
-  },[jobId])
-  
+  },[])
 
+  console.log(jobList);
   
-  if (loading) return <div className="container mx-auto my-[45vh] text-center text-2xl font-medium">Loading...</div>;
-
 
   return (
     <main>
