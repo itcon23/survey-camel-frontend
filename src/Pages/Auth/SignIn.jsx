@@ -1,90 +1,269 @@
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-lg border rounded-lg p-8 shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-blue-900 mb-2">Welcome Back</h2>
-        <p className="text-center mb-6 text-gray-700">
-          Sign in to your account to continue earning rewards.
-        </p>
+    <section className="bg-gray-100 dark:bg-dark py-20 lg:py-[120px]">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap -mx-4">
+          <div className="w-full px-4">
+            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px] dark:bg-dark-2">
+              <div className="mb-10 text-center md:mb-16">
+                <Link to="/" className="text-3xl font-bold text-blue-600">CamelSurvey</Link>
+              </div>
+              <form>
 
-        <form className="space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            className="input input-bordered w-full"
-          />
-
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              className="input input-bordered w-full pr-10"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-gray-600"
-            >
-              {showPassword ? "🙈" : "👁️"}
-            </button>
+                <div className="mb-6">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color dark:text-white dark:border-dark-3 focus:border-primary focus-visible:shadow-none"
+                  />
+                </div>
+                <div className="mb-6">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color dark:text-white dark:border-dark-3 focus:border-primary focus-visible:shadow-none"
+                  />
+                </div>
+                <div className="mb-10">
+                  <input
+                    type="submit"
+                    value="Sign In"
+                    className="w-full px-5 py-3 text-base font-medium text-white transition border rounded-md cursor-pointer border-primary bg-primary hover:bg-opacity-90"
+                  />
+                </div>
+              </form>
+              
+              <p className="text-base text-body-color dark:text-dark-6">
+                <span className="pr-0.5">Do not have an Account?</span>
+                <Link to="/auth/signup"
+                  className="text-primary hover:underline"
+                >
+                  {" "}
+                  Sign Up{" "}
+                </Link>
+              </p>
+              <div>
+                <span className="absolute top-1 right-1">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="1.39737"
+                      cy="38.6026"
+                      r="1.39737"
+                      transform="rotate(-90 1.39737 38.6026)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="1.39737"
+                      cy="1.99122"
+                      r="1.39737"
+                      transform="rotate(-90 1.39737 1.99122)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="13.6943"
+                      cy="38.6026"
+                      r="1.39737"
+                      transform="rotate(-90 13.6943 38.6026)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="13.6943"
+                      cy="1.99122"
+                      r="1.39737"
+                      transform="rotate(-90 13.6943 1.99122)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="25.9911"
+                      cy="38.6026"
+                      r="1.39737"
+                      transform="rotate(-90 25.9911 38.6026)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="25.9911"
+                      cy="1.99122"
+                      r="1.39737"
+                      transform="rotate(-90 25.9911 1.99122)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="38.288"
+                      cy="38.6026"
+                      r="1.39737"
+                      transform="rotate(-90 38.288 38.6026)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="38.288"
+                      cy="1.99122"
+                      r="1.39737"
+                      transform="rotate(-90 38.288 1.99122)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="1.39737"
+                      cy="26.3057"
+                      r="1.39737"
+                      transform="rotate(-90 1.39737 26.3057)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="13.6943"
+                      cy="26.3057"
+                      r="1.39737"
+                      transform="rotate(-90 13.6943 26.3057)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="25.9911"
+                      cy="26.3057"
+                      r="1.39737"
+                      transform="rotate(-90 25.9911 26.3057)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="38.288"
+                      cy="26.3057"
+                      r="1.39737"
+                      transform="rotate(-90 38.288 26.3057)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="1.39737"
+                      cy="14.0086"
+                      r="1.39737"
+                      transform="rotate(-90 1.39737 14.0086)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="13.6943"
+                      cy="14.0086"
+                      r="1.39737"
+                      transform="rotate(-90 13.6943 14.0086)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="25.9911"
+                      cy="14.0086"
+                      r="1.39737"
+                      transform="rotate(-90 25.9911 14.0086)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="38.288"
+                      cy="14.0086"
+                      r="1.39737"
+                      transform="rotate(-90 38.288 14.0086)"
+                      fill="#3056D3"
+                    />
+                  </svg>
+                </span>
+                <span className="absolute left-1 bottom-1">
+                  <svg
+                    width="29"
+                    height="40"
+                    viewBox="0 0 29 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="2.288"
+                      cy="25.9912"
+                      r="1.39737"
+                      transform="rotate(-90 2.288 25.9912)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="14.5849"
+                      cy="25.9911"
+                      r="1.39737"
+                      transform="rotate(-90 14.5849 25.9911)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="26.7216"
+                      cy="25.9911"
+                      r="1.39737"
+                      transform="rotate(-90 26.7216 25.9911)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="2.288"
+                      cy="13.6944"
+                      r="1.39737"
+                      transform="rotate(-90 2.288 13.6944)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="14.5849"
+                      cy="13.6943"
+                      r="1.39737"
+                      transform="rotate(-90 14.5849 13.6943)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="26.7216"
+                      cy="13.6943"
+                      r="1.39737"
+                      transform="rotate(-90 26.7216 13.6943)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="2.288"
+                      cy="38.0087"
+                      r="1.39737"
+                      transform="rotate(-90 2.288 38.0087)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="2.288"
+                      cy="1.39739"
+                      r="1.39737"
+                      transform="rotate(-90 2.288 1.39739)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="14.5849"
+                      cy="38.0089"
+                      r="1.39737"
+                      transform="rotate(-90 14.5849 38.0089)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="26.7216"
+                      cy="38.0089"
+                      r="1.39737"
+                      transform="rotate(-90 26.7216 38.0089)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="14.5849"
+                      cy="1.39761"
+                      r="1.39737"
+                      transform="rotate(-90 14.5849 1.39761)"
+                      fill="#3056D3"
+                    />
+                    <circle
+                      cx="26.7216"
+                      cy="1.39761"
+                      r="1.39737"
+                      transform="rotate(-90 26.7216 1.39761)"
+                      fill="#3056D3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
           </div>
-
-          <div className="text-right text-sm">
-            <a href="#" className="link link-hover text-blue-600">
-              Forgot password?
-            </a>
-          </div>
-
-          <button className="btn btn-primary w-full mt-2">Login</button>
-        </form>
-
-        {/* OR Divider */}
-        <div className="flex items-center my-6">
-          <div className="flex-grow h-px bg-gray-300" />
-          <span className="mx-2 text-sm text-gray-500">or</span>
-          <div className="flex-grow h-px bg-gray-300" />
-        </div>
-
-        {/* Social Logins */}
-        <div className="flex flex-col gap-3">
-          <button className="btn bg-white text-black border border-[#e5e5e5] flex items-center justify-center gap-2">
-            <svg
-              aria-label="Google logo"
-              width="16"
-              height="16"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <g>
-                <path fill="#fff" d="m0 0H512V512H0" />
-                <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341" />
-                <path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57" />
-                <path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73" />
-                <path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55" />
-              </g>
-            </svg>
-            Login with Google
-          </button>
-
-          <button className="btn bg-[#1A77F2] text-white border-[#005fd8] flex items-center justify-center gap-2">
-            <svg
-              aria-label="Facebook logo"
-              width="16"
-              height="16"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-            >
-              <path
-                fill="white"
-                d="M8 12h5V8c0-6 4-7 11-6v5c-4 0-5 0-5 3v2h5l-1 6h-4v12h-6V18H8z"
-              />
-            </svg>
-            Login with Facebook
-          </button>
         </div>
       </div>
     </section>

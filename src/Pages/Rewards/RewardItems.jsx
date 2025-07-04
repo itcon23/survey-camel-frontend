@@ -61,29 +61,37 @@ export default function RewardItems() {
   ];
 
   return (
-    <section className="mb-20">
-      <div className="container">
-        <div className="my-8">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Choose from 239+ rewards
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+            Choose from 239+ Rewards
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-10">
-            Withdraw cash via PayPal or choose from hundreds of different Gift Cards
+          <p className="mt-4 text-xl text-gray-600">
+            Withdraw cash via PayPal or select from hundreds of gift cards.
           </p>
-          <div className="flex flex-wrap gap-5 justify-center">
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="rounded-md p-5 border-2 border-gray-200 pb-6 hover:shadow-2xl w-60 text-center"
-              >
-                <div className="h-60 flex items-center justify-center">
-                  <img src={card.link} alt={card.name} className="max-h-full" />
-                </div>
-                <hr className="bg-gray-300 my-4" />
-                <h2 className="text-lg font-bold">{card.name}</h2>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="aspect-w-4 aspect-h-3 bg-gray-100">
+                <img
+                  src={card.link}
+                  alt={card.name}
+                  className="object-contain p-4 w-full h-full"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-4 text-center">
+                <h3 className="text-base font-semibold text-gray-800">
+                  {card.name}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
