@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+
+
 export default function Header() {
+
+  
   const location = useLocation();
   const [bgDark, setBgDark] = useState(false);
   useEffect(() => {
     let pathName = location.pathname.split("/")[1];
 
-    if (pathName !== "" && pathName !== "about" && pathName !== "rewards") {
+    if (pathName !== "" && pathName !== "about" && pathName !== "rewards" && pathName !== "jobs") {
       setBgDark(true);
     } else {
       setBgDark(false);
@@ -38,9 +42,9 @@ export default function Header() {
     }
   `}
 >
-      <div className="container">
-        <div className="flex justify-center md:justify-between items-center">
-          <h2 className="text-xl font-bold hidden md:block">Camel Survey</h2>
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold hidden md:block"><Link to="/">Camel Survey</Link></h2>
 
           <div className="flex gap-20 items-center">
             <ul className="flex gap-5 font-medium">
@@ -59,10 +63,11 @@ export default function Header() {
               <button className="btn btn-accent">
                 <Link to="/auth/signin">Sign In</Link>
               </button>
-              <button className="btn btn-outline btn-accent">
+              <button className="hidden md:block btn btn-outline btn-accent">
                 <Link to="/auth/signup">Join</Link>
               </button>
             </div>
+
           </div>
         </div>
       </div>

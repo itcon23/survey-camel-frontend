@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Image1 from "../../assets/img/home/home-1.avif";
 import Image2 from "../../assets/img/home/home-2.avif";
 import Image3 from "../../assets/img/home/home-3.avif";
@@ -27,7 +28,7 @@ export default function HowItWorks() {
                 cash. From single question polls to 30 minute market research
                 questionnaires, there's always time to earn Swagbucks.
               </p>
-              <button className="btn btn-primary">Sign Up Now</button>
+              <button className="btn btn-primary"><Link to="/auth/signup">Sign Up Now</Link></button>
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@ export default function HowItWorks() {
                 offers to your favorite stores. Combine with your preferred
                 credit card to earn additional cash back.
               </p>
-              <button className="btn btn-primary">Sign Up Now</button>
+              <button className="btn btn-primary"><Link to="/auth/signup">Sign Up Now</Link></button>
             </div>
             <img src={Image2} className="" />
           </div>
@@ -62,7 +63,7 @@ export default function HowItWorks() {
                 app, you can get paid to play games. Create or discover the
                 latest short videos on Swagit.
               </p>
-              <button className="btn btn-primary">Sign Up Now</button>
+              <button className="btn btn-primary"><Link to="/auth/signup">Sign Up Now</Link></button>
             </div>
           </div>
         </div>

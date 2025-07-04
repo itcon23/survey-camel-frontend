@@ -10,6 +10,8 @@ import AuthLayout from "./Layout/AuthLayout";
 import TermsAndConditions from "./Pages/Others/TermsAndConditions";
 import PrivacyPolicy from "./Pages/Others/PrivacyPolicy";
 import Contact from "./Pages/Others/Contact";
+import Jobs from "./Pages/Jobs/Jobs";
+import JobDetails from "./Pages/JobDetails/JobDetails";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="rewards" element={<Rewards />} />
+          <Route path="jobs" element={<Jobs />} />
+          <Route path="jobs/:jobId" element={<JobDetails />} />
           <Route path="termsandconditions" element={<TermsAndConditions />} />
           <Route path="privacypolicy" element={<PrivacyPolicy />} />
           <Route path="contact" element={<Contact />} />

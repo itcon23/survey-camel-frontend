@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function PrivacyPolicy() {
   return (
     <section
@@ -19,7 +21,7 @@ export default function PrivacyPolicy() {
           That's why we work hard to make sure your details are kept under lock
           and key
         </p>
-        <button className="btn btn-primary">Get Started Free</button>
+        <button className="btn btn-primary"><Link to="/auth/signup">Get Started Free</Link></button>
       </div>
     </section>
   );

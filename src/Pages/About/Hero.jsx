@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="mb-20">
@@ -16,7 +18,7 @@ export default function Hero() {
             <p className="mb-5">
               LEARN WHAT WE DO AND HOW WE DO IT (IT'S SIMPLE, WE PROMISE).
             </p>
-            <button className="btn btn-primary">Get Started Free</button>
+            <button className="btn btn-primary"><Link to="/auth/signup">Get Started Free</Link></button>
           </div>
         </div>
       </div>
