@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 export default function SignUp() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong! Please try again.',
+    });
+  };
+
   return (
     <section className="bg-gray-100 py-20 lg:py-[120px]">
       <div className="container mx-auto">
@@ -10,32 +22,56 @@ export default function SignUp() {
               <div className="mb-10 text-center md:mb-16">
                 <Link to="/" className="text-3xl font-bold text-blue-600">CamelSurvey</Link>
               </div>
-              <form>
-                                <div className="mb-6">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="mb-6">
                   <input
                     type="text"
                     placeholder="Fullname"
-                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color  focus:border-primary focus-visible:shadow-none"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color focus:border-primary focus-visible:shadow-none"
+                    {...register("fullname", { 
+                      required: "Full name is required",
+                      minLength: {
+                        value: 3,
+                        message: "Full name must be at least 3 characters"
+                      }
+                    })}
                   />
+                  {errors.fullname && <p className="mt-1 text-sm text-red-500 text-left">{errors.fullname.message}</p>}
                 </div>
                 <div className="mb-6">
                   <input
                     type="text"
                     placeholder="Email"
-                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color  focus:border-primary focus-visible:shadow-none"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color focus:border-primary focus-visible:shadow-none"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
+                    })}
                   />
+                  {errors.email && <p className="mt-1 text-sm text-red-500 text-left">{errors.email.message}</p>}
                 </div>
                 <div className="mb-6">
                   <input
                     type="password"
                     placeholder="Password"
-                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color  focus:border-primary focus-visible:shadow-none"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color focus:border-primary focus-visible:shadow-none"
+                    {...register("password", { 
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Password must be at least 6 characters"
+                      }
+                    })}
                   />
+                  {errors.password && <p className="mt-1 text-sm text-red-500 text-left">{errors.password.message}</p>}
                 </div>
                 <div className="mb-10">
                   <input
                     type="submit"
-                    value="Sign UP"
+                    value="Sign Up"
                     className="w-full px-5 py-3 text-base font-medium text-white transition border rounded-md cursor-pointer border-primary bg-primary hover:bg-opacity-90"
                   />
                 </div>
