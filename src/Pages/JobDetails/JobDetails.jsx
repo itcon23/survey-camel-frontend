@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { FaMapMarkerAlt, FaBriefcase } from "react-icons/fa";
+import { FaMapMarkerAlt, FaBriefcase, FaClock } from "react-icons/fa";
 import { FaSackDollar } from "react-icons/fa6";
 
 import {
@@ -14,24 +14,27 @@ import {
 
 export default function JobDetails() {
   const { jobId } = useParams();
-  const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [job, setJob] = useState(null);
+
 
 
   useEffect(() => {
     const fetchJobList = async () => {
-      const response = await fetch('/jobs.json');
+      const response = await fetch("/jobs.json");
       const data = await response.json();
-      setJob(data.find(dt => dt._id == jobId))
-      setLoading(false)
-    }
+      setJob(data.find((dt) => dt._id == jobId));
+      setLoading(false);
+    };
     fetchJobList();
-  },[jobId])
-  
+  }, [jobId]);
 
-  
-  if (loading) return <div className="container mx-auto my-[45vh] text-center text-2xl font-medium">Loading...</div>;
-
+  if (loading)
+    return (
+      <div className="container mx-auto my-[45vh] text-center text-2xl font-medium">
+        Loading...
+      </div>
+    );
 
   return (
     <main>
@@ -39,57 +42,67 @@ export default function JobDetails() {
         {/* Top Area */}
         <div className="bg-[#04343a] py-12">
           <div className="container mx-auto">
-              <div className="pt-[10vh] Pb-20">
-                <div className="inline-block p-1 px-2 rounded-full bg-white mb-2">
-                  <p className="text-xs font-bold text-[#04343a]">
-                    {job.jobType}
-                  </p>
-                </div>
-                <h2 className="text-4xl font-bold text-white my-5">
-                  {job.title}
-                </h2>
-                <p className="flex items-center gap-2 text-gray-400 text-xl capitalize">
-                  {" "}
-                  <FaMapMarkerAlt /> <span>{job.location}</span>{" "}
+            <div className="pt-[10vh] Pb-20">
+              <div className="inline-block p-1 px-2 rounded-full bg-white mb-2">
+                <p className="text-xs font-bold text-[#04343a]">
+                  {job.jobType}
                 </p>
-                <p className="text-white text-justify mt-3">
-                  {job.shortDescription}
-                </p>
-
-                {/* Hero Below Items */}
-                    <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-12 mt-12">
-                  {/* item */}
-                  <div className="flex items-center gap-2">
-                    <FaBriefcase className="text-5xl text-[#0b8260]" />
-                    <div>
-                      <p className="text-white leading-5">Department</p>
-                      <p className="text-white font-bold text-lg capitalize">
-                        {job.department}
-                      </p>
-                    </div>
-                  </div>
-                  {/* item */}
-                  <div className="flex items-center gap-2">
-                    <FaMapMarkerAlt className="text-5xl text-[#0b8260]" />
-                    <div>
-                      <p className="text-white leading-5">Location</p>
-                      <p className="text-white font-bold text-lg capitalize">
-                        {job.location}
-                      </p>
-                    </div>
-                  </div>
-                  {/* item */}
-                  <div className="flex items-center gap-2">
-                    <FaSackDollar className="text-5xl text-[#0b8260]" />
-                    <div>
-                      <p className="text-white leading-5">Salary</p>
-                      <p className="text-white font-bold text-lg">
-                        {job.salary}
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
+              <h2 className="text-4xl font-bold text-white my-5">
+                {job.title}
+              </h2>
+              <p className="flex items-center gap-2 text-gray-400 text-xl capitalize">
+                {" "}
+                <FaMapMarkerAlt /> <span>{job.location}</span>{" "}
+              </p>
+              <p className="text-white text-justify mt-3">
+                {job.shortDescription}
+              </p>
+
+              {/* Hero Below Items */}
+              <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-12 mt-12">
+                {/* item */}
+                <div className="flex items-center gap-2">
+                  <FaBriefcase className="text-5xl text-[#0b8260]" />
+                  <div>
+                    <p className="text-white leading-5">Department</p>
+                    <p className="text-white font-bold text-lg capitalize">
+                      {job.department}
+                    </p>
+                  </div>
+                </div>
+                {/* item */}
+                <div className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="text-5xl text-[#0b8260]" />
+                  <div>
+                    <p className="text-white leading-5">Location</p>
+                    <p className="text-white font-bold text-lg capitalize">
+                      {job.location}
+                    </p>
+                  </div>
+                </div>
+                {/* item */}
+                <div className="flex items-center gap-2">
+                  <FaSackDollar className="text-5xl text-[#0b8260]" />
+                  <div>
+                    <p className="text-white leading-5">Salary</p>
+                    <p className="text-white font-bold text-lg">{job.salary}</p>
+                  </div>
+                </div>
+                {/* item */}
+                {job.workHours && (
+                  <div className="flex items-center gap-2">
+                    <FaClock className="text-5xl text-[#0b8260]" />
+                    <div>
+                      <p className="text-white leading-5">Work Hours</p>
+                      <p className="text-white font-bold text-lg">
+                        {job.workHours}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -106,6 +119,14 @@ export default function JobDetails() {
                       {paragraph}
                     </p>
                   ))}
+                
+                {job.experience && (
+                  <div className="mb-5">
+                    <h5 className="text-xl font-medium mb-2">Experience:</h5>
+                    <p className="ml-4">{job.experience}</p>
+                  </div>
+                )}
+
                 <div className="mb-5">
                   <h5 className="text-xl font-medium mb-2">Requirements:</h5>
                   <ul className="ml-12 list-disc">
@@ -134,11 +155,22 @@ export default function JobDetails() {
                     ))}
                   </ul>
                 </div>
+
+                {job.benefits && job.benefits.length > 0 && (
+                  <div className="mb-5">
+                    <h5 className="text-xl font-medium mb-2">Benefits:</h5>
+                    <ul className="ml-12 list-disc">
+                      {job.benefits.map((benefit, index) => (
+                        <li key={index}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* Footer Area */}
                 <div className="border-t border-gray-200 pb-0 p-5">
                   <div className="flex items-center gap-3">
                     <p>Share This Job:</p>
-
                     <div className="flex items-center gap-1">
                       <FaFacebookSquare className="text-4xl text-gray-400" />
                       <FaLinkedin className="text-4xl text-gray-400" />
@@ -152,196 +184,58 @@ export default function JobDetails() {
 
               <div className="md:w-4/12 p-4 md:p-12 bg-white rounded-md">
                 <h4 className="text-2xl font-medium mb-2">Ready To Apply?</h4>
-                <p className="text-xs">
+                <p className="text-xs mb-4">
                   Complete the eligibities checklist now and get started with
                   your online application
                 </p>
 
-                {/* Form Start  */}
-                <form action="">
-                  <div className="mt-5">
-                    <label className="input validator w-full">
-                      <svg
-                        className="h-[1em] opacity-50"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          strokeLinejoin="round"
-                          strokeLinecap="round"
-                          strokeWidth="2.5"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                          <circle cx="12" cy="7" r="4"></circle>
-                        </g>
-                      </svg>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Full Name"
-                        minlength="3"
-                        maxlength="30"
-                        title="Only letters, numbers or dash"
-                      />
-                    </label>
-                  </div>
-                  <div className="mt-5">
-                    <label className="input validator w-full">
-                      <svg
-                        className="h-[1em] opacity-50"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          strokeLinejoin="round"
-                          strokeLinecap="round"
-                          strokeWidth="2.5"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <rect
-                            width="20"
-                            height="16"
-                            x="2"
-                            y="4"
-                            rx="2"
-                          ></rect>
-                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                        </g>
-                      </svg>
-                      <input
-                        type="email"
-                        required
-                        placeholder="Email"
-                        minlength="3"
-                        maxlength="30"
-                        title="Only letters, numbers or dash"
-                      />
-                    </label>
-                  </div>
-                  <div className="mt-5">
-                    <label htmlFor="" className="text-gray-400">Upload Your Resume</label>
-                    <input
-                      type="file"
-                      className="w-full file-input file-input-accent"
-                    />
-                  </div>
-                  <div className="mt-5">
-                    <h5>Are you authorized to work In USA?</h5>
-                    <div className="flex gap-2 items-center">
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">Yes</label>
-                        <input
-                          type="radio"
-                          name="usa-radio"
-                          className="radio radio-accent radio-xs"
-                          defaultChecked
-                        />
-                      </div>
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">No</label>
-                        <input
-                          type="radio"
-                          name="usa-radio"
-                          className="radio radio-accent radio-xs"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-5">
-                    <h5>Do you have USA GOV Document <span className="xs">( Nid, Driving License, Passport etc)</span> </h5>
-                    <div className="flex gap-2 items-center">
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">Yes</label>
-                        <input
-                          type="radio"
-                          name="usa-doc-radio"
-                          className="radio radio-accent radio-xs"
-                          defaultChecked
-                        />
-                      </div>
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">No</label>
-                        <input
-                          type="radio"
-                          name="usa-doc-radio"
-                          className="radio radio-accent radio-xs"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-5">
-                    <h5>Do you have a Bachelor Degree?</h5>
-                    <div className="flex gap-2 items-center">
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">Yes</label>
-                        <input
-                          type="radio"
-                          name="bachelor-radio"
-                          className="radio radio-accent radio-xs"
-                          defaultChecked
-                        />
-                      </div>
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">No</label>
-                        <input
-                          type="radio"
-                          name="bachelor-radio"
-                          className="radio radio-accent radio-xs"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-5">
-                    <h5>Do you have a Masters Degree?</h5>
-                    <div className="flex gap-2 items-center">
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">Yes</label>
-                        <input
-                          type="radio"
-                          name="masters-radio"
-                          className="radio radio-accent radio-xs"
-                          defaultChecked
-                        />
-                      </div>
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">No</label>
-                        <input
-                          type="radio"
-                          name="masters-radio"
-                          className="radio radio-accent radio-xs"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  {job.location === "remote" && <div className="mt-5">
-                    <h5>Do you agree to confirm your Identity with <a href="https://www.veriff.com/" target="_blank" className="text-blue-600 underline">veriff</a>?</h5>
-                    <div className="flex gap-2 items-center">
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">Yes</label>
-                        <input
-                          type="radio"
-                          name="veriff-radio"
-                          className="radio radio-accent radio-xs"
-                          defaultChecked
-                        />
-                      </div>
-                      <div className="flex gap-2 items-center">
-                        <label htmlFor="">No</label>
-                        <input
-                          type="radio"
-                          name="veriff-radio"
-                          className="radio radio-accent radio-xs"
-                        />
-                      </div>
-                    </div>
-                  </div>}
-                  
+                <div className="mb-6">
+                  <h5 className="font-medium mb-2">Eligibility Requirements:</h5>
+                  <ul className="text-xs list-disc pl-5 space-y-1">
+                    {job.requirements
+                      .filter(req => 
+                        req.includes("authorized") || 
+                        req.includes("located") || 
+                        req.includes("citizenship") ||
+                        req.includes("Veriff")
+                      )
+                      .map((requirement, index) => (
+                        <li key={index}>{requirement}</li>
+                      ))}
+                  </ul>
+                </div>
 
-                  <input type="submit" className="btn btn-accent mt-8 w-full" value="Submit Application" />
-                </form>
+                {job.requirements.some(req => req.includes("Veriff")) && (
+                  <div className="mb-6 p-3 bg-gray-50 rounded">
+                    <h5 className="font-medium mb-1 text-sm">Why Veriff?</h5>
+                    <p className="text-xs">
+                      Veriff helps us verify your identity securely to prevent fraud and ensure compliance with US employment laws. 
+                      This one-time verification protects both you and our organization, and takes less than 2 minutes to complete.
+                    </p>
+                  </div>
+                )}
+
+                <div className="border-t pt-4">
+                  <h5 className="font-medium mb-2 text-sm">Application Details:</h5>
+                  {job.applicationDeadline && (
+                    <p className="text-xs mb-1">
+                      <span className="font-medium">Deadline:</span> {job.applicationDeadline}
+                    </p>
+                  )}
+                  
+                  <h5 className="font-medium mb-2 text-sm mt-3">Alternative Application:</h5>
+                  <p className="text-xs mb-2">
+                    Prefer to apply via email? Send your CV and details to:
+                  </p>
+                  <a href="mailto:careers@yourcompany.com" className="text-blue-600 text-xs underline">
+                    careers@yourcompany.com
+                  </a>
+                  
+                  <p className="text-xs mt-3 mb-1">Need assistance?</p>
+                  <a href="mailto:support@yourcompany.com" className="text-blue-600 text-xs underline">
+                    support@yourcompany.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>

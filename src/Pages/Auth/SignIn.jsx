@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function SignIn() {
   return (
-    <section className="bg-gray-100 dark:bg-dark py-20 lg:py-[120px]">
+    <section className="bg-gray-100 py-20 lg:py-[120px]">
       <div className="container mx-auto">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
-            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px] dark:bg-dark-2">
+            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
               <div className="mb-10 text-center md:mb-16">
                 <Link to="/" className="text-3xl font-bold text-blue-600">CamelSurvey</Link>
               </div>
@@ -16,14 +16,14 @@ export default function SignIn() {
                   <input
                     type="text"
                     placeholder="Email"
-                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color dark:text-white dark:border-dark-3 focus:border-primary focus-visible:shadow-none"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color  focus:border-primary focus-visible:shadow-none"
                   />
                 </div>
                 <div className="mb-6">
                   <input
                     type="password"
                     placeholder="Password"
-                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color dark:text-white dark:border-dark-3 focus:border-primary focus-visible:shadow-none"
+                    className="w-full px-5 py-3 text-base bg-transparent border rounded-md outline-none border-stroke text-body-color  focus:border-primary focus-visible:shadow-none"
                   />
                 </div>
                 <div className="mb-10">
@@ -35,7 +35,7 @@ export default function SignIn() {
                 </div>
               </form>
               
-              <p className="text-base text-body-color dark:text-dark-6">
+              <p className="text-base text-body-color">
                 <span className="pr-0.5">Do not have an Account?</span>
                 <Link to="/auth/signup"
                   className="text-primary hover:underline"

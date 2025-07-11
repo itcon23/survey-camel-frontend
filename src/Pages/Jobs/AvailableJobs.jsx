@@ -48,7 +48,7 @@ export default function AvailableJobs() {
                     <p className="text-lg font-medium text-gray-400 flex items-center gap-1 capitalize"><FaMapMarkerAlt/>{job.location}</p>
                     <p className="text-lg font-medium text-gray-400 flex items-center gap-1 capitalize"><FaBriefcase/>{job.jobType}</p>
                   </div>
-                  <p className="text-2xl font-bold">{job.salary}</p>
+                  <p className="text-lg font-bold">{job.salary}</p>
                   <p className="mt-2 text-gray-500 w-full truncate-3-lines">
                     {job.description}
                   </p>

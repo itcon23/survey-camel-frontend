@@ -12,8 +12,12 @@ import PrivacyPolicy from "./Pages/Others/PrivacyPolicy";
 import Contact from "./Pages/Others/Contact";
 import Jobs from "./Pages/Jobs/Jobs";
 import JobDetails from "./Pages/JobDetails/JobDetails";
+import { useEffect } from "react";
 
 export default function App() {
+   useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
