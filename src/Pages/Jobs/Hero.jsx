@@ -14,7 +14,7 @@ export default function Hero() {
             Find the great jobs offer for you
           </h1>
           <p className="mb-5">
-             Check what new jobs we have in store for you on Camel Survey.
+             Check what new jobs we have in store for you on Survey Camel.
           </p>
           <button className="btn btn-primary">Apply Now</button>
         </div>
