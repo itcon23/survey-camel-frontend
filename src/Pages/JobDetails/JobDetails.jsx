@@ -17,8 +17,6 @@ export default function JobDetails() {
   const [loading, setLoading] = useState(true);
   const [job, setJob] = useState(null);
 
-
-
   useEffect(() => {
     const fetchJobList = async () => {
       const response = await fetch("/jobs.json");
@@ -119,7 +117,7 @@ export default function JobDetails() {
                       {paragraph}
                     </p>
                   ))}
-                
+
                 {job.experience && (
                   <div className="mb-5">
                     <h5 className="text-xl font-medium mb-2">Experience:</h5>
@@ -190,14 +188,17 @@ export default function JobDetails() {
                 </p>
 
                 <div className="mb-6">
-                  <h5 className="font-medium mb-2">Eligibility Requirements:</h5>
+                  <h5 className="font-medium mb-2">
+                    Eligibility Requirements:
+                  </h5>
                   <ul className="text-xs list-disc pl-5 space-y-1">
                     {job.requirements
-                      .filter(req => 
-                        req.includes("authorized") || 
-                        req.includes("located") || 
-                        req.includes("citizenship") ||
-                        req.includes("Veriff")
+                      .filter(
+                        (req) =>
+                          req.includes("authorized") ||
+                          req.includes("located") ||
+                          req.includes("citizenship") ||
+                          req.includes("Veriff")
                       )
                       .map((requirement, index) => (
                         <li key={index}>{requirement}</li>
@@ -205,35 +206,48 @@ export default function JobDetails() {
                   </ul>
                 </div>
 
-                {job.requirements.some(req => req.includes("Veriff")) && (
+                {job.requirements.some((req) => req.includes("Veriff")) && (
                   <div className="mb-6 p-3 bg-gray-50 rounded">
                     <h5 className="font-medium mb-1 text-sm">Why Veriff?</h5>
                     <p className="text-xs">
-                      Veriff helps us verify your identity securely to prevent fraud and ensure compliance with US employment laws. 
-                      This one-time verification protects both you and our organization, and takes less than 2 minutes to complete.
+                      Veriff helps us verify your identity securely to prevent
+                      fraud and ensure compliance with US employment laws. This
+                      one-time verification protects both you and our
+                      organization, and takes less than 2 minutes to complete.
                     </p>
                   </div>
                 )}
 
                 <div className="border-t pt-4">
-                  <h5 className="font-medium mb-2 text-sm">Application Details:</h5>
+                  <h5 className="font-medium mb-2 text-sm">
+                    Application Details:
+                  </h5>
                   {job.applicationDeadline && (
                     <p className="text-xs mb-1">
-                      <span className="font-medium">Deadline:</span> {job.applicationDeadline}
+                      <span className="font-medium">Deadline:</span>{" "}
+                      {job.applicationDeadline}
                     </p>
                   )}
-                  
-                  <h5 className="font-medium mb-2 text-sm mt-3">Alternative Application:</h5>
+
+                  <h5 className="font-medium mb-2 text-sm mt-3">
+                    Alternative Application:
+                  </h5>
                   <p className="text-xs mb-2">
                     Prefer to apply via email? Send your CV and details to:
                   </p>
-                  <a href="mailto:careers@yourcompany.com" className="text-blue-600 text-xs underline">
-                    careers@yourcompany.com
+                  <a
+                    href="mailto:career@surveycamel.com"
+                    className="text-blue-600 text-xs underline"
+                  >
+                    career@surveycamel.com
                   </a>
-                  
+
                   <p className="text-xs mt-3 mb-1">Need assistance?</p>
-                  <a href="mailto:support@yourcompany.com" className="text-blue-600 text-xs underline">
-                    support@yourcompany.com
+                  <a
+                    href="mailto:support@surveycamel.com"
+                    className="text-blue-600 text-xs underline"
+                  >
+                    support@surveycamel.com
                   </a>
                 </div>
               </div>
